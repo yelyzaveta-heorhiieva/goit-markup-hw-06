@@ -243,7 +243,6 @@ section:not(.topic) {
 .team-member {
   max-width: 100%;
   background-color: #fff;
-  overflow: hidden;
   border-radius: 0 0 4px 4px;
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
@@ -318,6 +317,7 @@ section:not(.topic) {
 .portfolio-list {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 48px;
 }
 
