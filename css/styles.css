@@ -4,6 +4,7 @@ body {
   color: #434455;
   line-height: 1.5;
   margin: 0;
+  min-width: 320px;
 }
 
 a {
@@ -44,7 +45,7 @@ button {
 .container {
   max-width: 1158px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 16px;
 }
 
 /* #region Header */
@@ -67,7 +68,7 @@ button {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
-  margin-right: 76px;
+  margin-right: auto;
   padding: 16px 0;
 }
 
@@ -101,6 +102,12 @@ button {
 }
 
 .menu-icon {
+  fill: #2f2f37;
+}
+
+.menu-btn:hover .menu-icon,
+.menu-btn:focus .menu-icon {
+  fill: #4d5ae5;
 }
 
 /* #endregion Header */
@@ -380,6 +387,7 @@ section:not(.topic) {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 72px;
 }
 
@@ -913,9 +921,216 @@ section:not(.topic) {
 }
 /* #endregion Overlay */
 
-@media screen and (min-width: 1158px) {
+@media screen and (min-width: 768px) and (max-width: 1158px) {
+  .container {
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
   .header-logo-link {
     padding: 24px 0;
+    margin-right: 120px;
+  }
+
+  .navigation-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .navigation-link {
+    display: block;
+    position: relative;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .navigation-link:hover,
+  .navigation-link:focus,
+  .contacts-link:hover,
+  .contacts-link:focus,
+  .navigation-link.current {
+    color: #404bbf;
+  }
+
+  .navigation-link::after {
+    content: '';
+    width: 100%;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    opacity: 0;
+  }
+
+  .navigation-link:hover::after,
+  .navigation-link:focus::after,
+  .navigation-link.current::after {
+    opacity: 1;
+  }
+  .contacts {
+    display: block;
+    margin-left: auto;
+    padding: 16px 0;
+  }
+
+  .contacts-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .contacts-link {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    color: #434455;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .topic {
+    padding-top: 112px;
+    padding-bottom: 112px;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/2x/hero@2x.jpg);
+  }
+
+  .topic-title {
+    font-size: 56px;
+    line-height: 1.07;
+    max-width: 496px;
+    margin: 0 auto 36px auto;
+  }
+  .advantages-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 72px;
+    column-gap: 24px;
+  }
+
+  .advantages-item {
+    align-items: flex-start;
+    width: calc((100% - 24px) / 2);
+  }
+
+  .advantages-item-title {
+    text-align: left;
+  }
+
+  .icon-container {
+    display: none;
+  }
+
+  .team-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 64px;
+    column-gap: 24px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .team-member {
+    max-width: calc((100% - 24px) / 2);
+  }
+
+  .portfolio-list {
+    flex-direction: row;
+    column-gap: 24px;
+    flex-wrap: wrap;
+    row-gap: 72px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .portfolio-item {
+    max-width: calc((100% - 24px) / 2);
+  }
+
+  .overlay {
+    height: 300px;
+  }
+
+  .footer-container {
+    padding-left: 92px;
+    padding-right: 148px;
+  }
+
+  .footer-container .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 72px;
+    column-gap: 24px;
+  }
+
+  .footer-logo-link {
+    display: inline-block;
+  }
+
+  .footer-text {
+    max-width: 264px;
+  }
+
+  .social-media-container {
+    margin: 0;
+  }
+
+  .subscribe-container {
+    justify-content: flex-start;
+    margin: 0;
+  }
+
+  .social-media-text,
+  .subscribe-text {
+    text-align: inherit;
+  }
+
+  .subscribe-form {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .subscribe-input {
+    width: 264px;
+  }
+
+  .header-overflay {
+    display: none;
+  }
+
+  .overflay {
+    width: 408px;
+    min-height: 584px;
+    padding: 72px 24px 24px 24px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .header-logo-link {
+    padding: 24px 0;
+    margin-right: 76px;
   }
 
   .navigation-list {
